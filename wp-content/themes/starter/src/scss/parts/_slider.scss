@@ -1,0 +1,124 @@
+/*--------------------------------------------------------------
+## Slickslider standard styles
+--------------------------------------------------------------*/
+.slickslider {
+	background: #ccc;
+	overflow: hidden;
+
+	&, .banner_text {
+		height: 300px;
+	}
+
+	.slide_container {
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		position: relative;
+		outline: none;
+
+		.banner_text {
+
+			h2 {
+				font-size: 36px;
+				line-height: 40px;
+			}
+			.button {
+				margin-top: 20px;
+			}
+
+			@media(max-width: $grid_s) {
+				text-align: center;
+			}
+		}
+	}
+
+	// Slick Dots Navigation
+
+	ul.slick-dots {
+		@include box-sizing();
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		text-align: center;
+
+		li {
+			display: inline-block;
+			text-indent: 0;
+			margin-left: 0;
+			padding: 0;
+			margin: 0 5px;
+
+			button {
+				text-shadow: none!important;
+				padding: 0;
+				text-indent: -9999px!important;;
+				height: 15px;
+				width: 15px;
+				line-height: 15px;
+				@include border-all-radius(50%);
+				box-shadow: none!important;
+				text-indent: 0;
+				background: #404042;
+			}
+
+			&.slick-active {
+
+				button {
+					background: $prim_color;
+				}
+			}
+		}
+	}
+
+	// Slick Directional Navigation
+
+	.slicknav {
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		margin-top: -25px;
+		z-index: 99;
+		color: #fff;
+		background: $prim_color;
+		text-align: center;
+		font-size: 30px;
+
+		&.next_arrow {
+			right: 0;
+
+			&:before {
+				margin-left: 5px;
+				content: "\f105";
+				font-family: "FontAwesome";
+			}
+		}
+		&.prev_arrow  {
+			left: 0;
+
+			&:before {
+				margin-right: 5px;
+				content: "\f104";
+				font-family: "FontAwesome";
+			}
+		}
+
+		&.next_arrow, &.prev_arrow {
+			@include transition();
+			display: block;
+
+			&:hover {
+				background: lighten($prim_color, 10%);
+			}
+
+			&:active {
+				background: lighten($prim_color, 15%);
+			}
+		}
+		@media(max-width: $grid_s) {
+			display: none!important;
+		}
+	}
+}

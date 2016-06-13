@@ -1,0 +1,281 @@
+/* ================================= */
+/* Header */
+/* ================================= */
+.site-header {
+	background-color: #FAFAFA;
+	display:          block;
+	width:            100%;
+	float:            left;
+	padding:          10px 0;
+	position:         relative;
+
+	a.logo {
+		margin:      0px 0px 15px 0px;
+		padding:     0px;
+		text-indent: -9999px;
+		z-index:     2;
+		height:      100px;
+		width:       200px;
+		display:     block;
+		position:    relative;
+		background:  url(/assets/images/backgrounds/default-logo.png) top left no-repeat;
+
+		@media (max-width: $grid_s) {
+			height          : 50px;
+			width           : 100px;
+			background-size : 100% auto;
+			float           : left;
+			margin-bottom   : 0;
+		}
+	}
+
+	@media (max-width: $grid_s) {
+		height  : 50px;
+		padding : 0;
+		margin-bottom : 15px;
+	}
+}
+
+/* ================================= */
+/* OffCanvas Menu */
+/* ================================= */
+a.offCanvas_trigger {
+	margin: 13px 0 0 0;
+	height: 22px;
+}
+
+.offCanvas_trigger.offCanvas_trigger_open .offCanvas_trigger_item,
+.offCanvas_trigger_item {
+	background: $prim_color;
+}
+
+ul.offCanvas_menu li.members_menu_div {
+	margin-top: 20px;
+	padding-top: 20px;
+  border-top: 1px solid #5F5F5F;
+}
+
+.offCanvas {
+	width: 260px;
+}
+
+/* ================================= */
+/* Navigation Menu DROP DOWN MENU */
+/* ================================= */
+/* Superfish Default */
+ul#primary-menu, ul#primary-menu * {
+	margin:     0;
+	padding:    0;
+	list-style: none;
+	position:   relative;
+}
+
+ul#primary-menu {
+	background: $prim_color;
+}
+
+ul#primary-menu li {
+	position: relative; /* Change to position: static; for left aligned menu */
+}
+
+ul#primary-menu li.sf-mega-wrap {
+	position: static; /* OR put this class on the parent (of .sf-mega) li to left align */
+}
+
+ul#primary-menu ul,
+ul#primary-menu .sf-mega {
+	position: absolute;
+	display:  none;
+	top:      100%;
+	left:     0;
+	z-index:  99;
+}
+
+ul#primary-menu .sf-mega ul {
+	display:  block;
+	float:    left;
+	width:    100%;
+	position: relative;
+}
+
+ul#primary-menu > li {
+	float: left;
+}
+
+ul#primary-menu li:hover > ul,
+ul#primary-menu li.sfHover > ul,
+ul#primary-menu  li:hover > .sf-mega,
+ul#primary-menu  li.sfHover > .sf-mega {
+	display: block;
+}
+
+ul#primary-menu a {
+	display:  block;
+	position: relative;
+}
+
+ul#primary-menu ul ul {
+	top:  0;
+	left: 100%;
+}
+
+ul#primary-menu .sf-mega {
+	display:            none;
+	position:           absolute;
+	float:              left;
+	top:                100%;
+	left:               0;
+	z-index:            99;
+	width:              100%;
+	-ms-box-sizing:     border-box;
+	-o-box-sizing:      border-box;
+	-moz-box-sizing:    border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing:         border-box;
+}
+
+ul#primary-menu .sf-mega ul ul {
+	left:    0;
+	display: none !important; /* Hides 3x level deep under mega */
+}
+
+ul#primary-menu .sf-mega > ul > li > ul {
+	opacity: 1 !important;
+	display: block !important; /* Shows 2x level deep under mega */
+}
+
+/* Superfish Skin */
+ul#primary-menu {
+	float:         left;
+	margin-bottom: 1em;
+	width:         100%;
+}
+
+ul#primary-menu ul
+ul#primary-menu .sf-mega {
+	min-width: 200px;
+	*width:    100%;
+}
+
+ul#primary-menu li {
+	-webkit-transition: background .2s;
+	transition:         background .2s;
+}
+
+ul#primary-menu ul li {
+	white-space:  nowrap;
+	*white-space: normal;
+}
+
+ul#primary-menu li:hover,
+ul#primary-menu li.sfHover {
+	-webkit-transition: none;
+	transition:         none;
+}
+
+ul#primary-menu > li {
+	width:     16.66%;
+	max-width: 16.66%;
+	display:   block;
+	float:     left;
+}
+
+ul#primary-menu > li > a {
+	display:     table;
+	position:    relative;
+	text-align:  center;
+	height:      54px;
+	float:       left;
+	font-size:   15px;
+	line-height: 18px;
+}
+
+ul#primary-menu a,
+ul#primary-menu a:visited {
+	background:         $prim_color;
+	color:              #FFFFFF;
+	border-left:        1px solid rgba(0, 0, 0, 0.2);
+	padding:            14px 15px;
+	text-decoration:    none;
+	zoom:               1;
+	display:            block;
+	width:              100%;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	-ms-box-sizing:     border-box;
+	box-sizing:         border-box;
+}
+
+ul#primary-menu a:hover, ul#primary-menu li.current > a {
+	background: lighten($prim_color, 8%);
+}
+
+ul#primary-menu li:first-child a {
+	border-left: 0;
+}
+
+ul#primary-menu > li > a > span {
+	display:            table-cell;
+	vertical-align:     middle;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	-ms-box-sizing:     border-box;
+	-o-box-sizing:      border-box;
+	box-sizing:         border-box;
+}
+
+/* Drop downs */
+ul#primary-menu ul a,
+ul#primary-menu ul a:visited {
+	border:     0;
+	padding:    8px 15px;
+	background: #FAFAFA;
+	color:      #777777;
+	font-size:  13px;
+}
+
+ul#primary-menu ul a:hover {
+	background: #FAFAFA;
+	color:      #000000;
+}
+
+/* Mega Menu */
+ul#primary-menu .sf-mega {
+	width: 600px;
+}
+
+ul#primary-menu .sf-mega,
+ul#primary-menu .sf-mega > ul {
+	background-color: #FAFAFA;
+}
+
+ul#primary-menu .sf-mega > ul {
+	-ms-box-sizing:       border-box;
+	-o-box-sizing:        border-box;
+	-moz-box-sizing:      border-box;
+	-webkit-box-sizing:   border-box;
+	box-sizing:           border-box;
+	float:                left;
+	width:                33%;
+
+	border-right:         1px solid #CCCCCC;
+	border-width:         1px;
+	border-right-style:   solid;
+	-webkit-border-image: -webkit-gradient(linear, 0 0, 0 100%, from(#CCCCCC), to(rgba(0, 0, 0, 0))) 1 100%;
+	-webkit-border-image: -webkit-linear-gradient(#CCCCCC, rgba(0, 0, 0, 0)) 1 100%;
+	-moz-border-image:    -moz-linear-gradient(#CCCCCC, rgba(0, 0, 0, 0)) 1 100%;
+	-o-border-image:      -o-linear-gradient(#CCCCCC, rgba(0, 0, 0, 0)) 1 100%;
+	border-image:         linear-gradient(to bottom, #CCCCCC, rgba(0, 0, 0, 0)) 1 100%;
+	border-left:          0;
+}
+
+ul#primary-menu .sf-mega > ul:last-of-type {
+	border-right: 0;
+}
+
+ul#primary-menu .sf-mega > ul > li > a {
+	font-weight:   bold;
+	border-bottom: 1px solid #CCCCCC;
+	color:         #000000;
+}

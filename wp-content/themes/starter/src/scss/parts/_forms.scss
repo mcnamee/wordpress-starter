@@ -1,0 +1,211 @@
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+input, textarea, select {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:   12px;
+	outline:     none;
+	width:       100%;
+}
+
+input[type="text"], input[type="email"], input[type="number"], input[type="url"], input[type="password"], textarea, select, .custom_select span {
+	width:                 100%;
+	@include border-all-radius(5px);
+	padding:               18px;
+	border:                1px solid #BABABA;
+	box-shadow:            rgba(255, 255, 255, 0) 0 0 4px;
+	transition:            box-shadow linear 0.2s, border linear 0.2s;
+	@include box-sizing();
+
+	&:focus {
+		border: 1px solid $prim_color !important;
+	}
+
+	@include placeholder(#000);
+
+	/* Change the autofill to any color */
+	&:-webkit-autofill, &:-webkit-autofill:focus {
+	    -webkit-box-shadow: 0 0 0px 1000px lighten($prim_color, 40%) inset;
+	    border: 1px solid $prim_color!important;
+	    -webkit-text-fill-color: $prim_color !important;
+	}
+
+	// Read Only fields
+	&[readonly] {
+		background: $border_color;
+
+		&:focus {
+			border: 1px solid #BABABA !important;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+# Custom Checkboxes & Radio Buttons
+--------------------------------------------------------------*/
+input[type="radio"].custom_input,
+input[type="checkbox"].custom_input {
+	display:none;
+
+	.lt-ie9 & {
+		width: auto;
+		display: block;
+		float: left;
+		margin: 5px 10px 0px 0px;
+	}
+
+	& + label {
+		display: block;
+		padding-right: 16px;
+		cursor: pointer;
+		text-align: left;
+		margin-bottom: 6px;
+
+		&:before {
+			content: "";
+			display: block;
+			width: 10px;
+			height: 10px;
+			background: #ffffff;
+			border: 2px solid #ffffff;
+			box-shadow: 0px 0px 0px 1px #BABABA;
+			float: left;
+			margin: 5px 10px 0px 0px;
+			-webkit-transition: background 0.1s ease;
+			-moz-transition: background 0.1s ease;
+			-ms-transition: background 0.1s ease;
+			-o-transition: background 0.1s ease;
+			transition: background 0.1s ease;
+
+			.lt-ie9 & {
+				display: none;
+			}
+		}
+
+		.no-boxshadow &:before {
+			outline: 1px solid #BABABA;
+		}
+
+		&:hover:before {
+			background: #BABABA;
+		}
+	}
+
+	& + label.active:before,
+	&:checked + label:before,
+	&:checked + label:hover:before {
+		background: $prim_color;
+	}
+
+
+	/* Large, boxy inputs */
+	&.box {
+		& + label {
+			border: 1px solid #BABABA;
+			padding: 10px;
+		}
+
+		& + label.active,
+		&:checked + label,
+		&:checked + label:hover {
+			border-color: $prim_color;
+		}
+	}
+}
+
+input[type="radio"].custom_input + label:before {
+		border-radius: 13px;
+}
+
+/*--------------------------------------------------------------
+# Buttons
+--------------------------------------------------------------*/
+input[type="submit"], button, .button {
+	padding: 18px 22px;
+	border: 0px none transparent;
+	display: inline-block;
+	line-height: 1em;
+	text-transform: uppercase;
+	border-radius: 5px;
+	cursor: pointer;
+	width: auto;
+	font-weight: bold;
+	margin-bottom: 3px;
+	transition: all 0.2s ease;
+	position: relative;
+	top: 0px;
+	text-decoration: none !important;
+	@include box-sizing();
+	@include button_styles($prim_color);
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:active {
+		top: 3px;
+		outline: 0;
+	}
+
+	&:focus {
+		outline: 0;
+	}
+
+	&.button_blue {
+		@include button_styles(#2D4C8C);
+	}
+
+	&.button_red {
+		@include button_styles($error_color);
+	}
+
+	&.button_white {
+		@include button_styles(#ffffff, $prim_color);
+	}
+
+	&.button_transparent {
+		@include button_styles(rgba(255,255,255,0.3), #ffffff);
+		border: 2px solid #ffffff;
+		box-shadow: none;
+		text-shadow: 0px 1px 0px rgba(0,0,0,0.3);
+		margin-bottom: 0px;
+		line-height: 1em;
+
+		&:hover {
+			background: rgba(255,255,255,0.5);
+		}
+
+		&:active {
+			top: 0px;
+		}
+	}
+
+	&.button_full_width {
+		width: 100%;
+		text-align: center;
+	}
+
+	&.button_small {
+		padding: 4px 10px;
+	}
+
+	&.button_large {
+		padding: 18px 22px;
+	}
+
+}
+
+.button a,
+.button a:hover,
+.button a:active {
+	color: inherit;
+	text-decoration: none !important;
+}
+
+button.button {
+	@extend .button;
+}
+
+.delete-button {
+	color: $error_color;
+}

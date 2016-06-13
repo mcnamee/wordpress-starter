@@ -1,0 +1,6 @@
+@mixin transition($animation_element: all, $speed: .25s, $type: ease, $delay: 0s) {
+  -webkit-backface-visibility: hidden;
+  -moz-transition: $animation_element $speed $type $delay;
+  -webkit-transition: $animation_element $speed $type $delay;
+  transition: $animation_element $speed $type $delay;
+}

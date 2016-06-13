@@ -1,0 +1,49 @@
+# Blacklist (ignore)
+# ------------------------------------------------------------
+# Ignore everything - we'll manually add what we need at the bottom
+/*
+/*/
+
+# Plus all of the following files
+.*
+error_log_local
+error_log_dev
+error_log
+*.log
+~*
+ehthumbs.db
+Thumbs.db
+*.sql
+*.sqlite
+
+
+# Whitelist (include)
+# ------------------------------------------------------------
+# Track Git stuff
+!.gitignore
+!.gitkeep
+!/README.md
+
+# Track the following files
+!/.editorconfig
+!/bower.json
+!/LICENCE
+!/gulpfile.js
+!/package.json
+
+# Setup to track individual folders below
+!/wp-content
+/wp-content/*
+!/wp-content/themes
+/wp-content/themes/*
+!/wp-content/plugins
+/wp-content/plugins/*
+
+# Track these THEMES/s ---------
+!/wp-content/themes/starter
+
+# But not the theme dist folder
+/wp-content/themes/starter/dist
+
+# Track these PLUGINS/s ---------
+# !wp-content/plugins/starter

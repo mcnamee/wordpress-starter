@@ -1,0 +1,26 @@
+
+@mixin placeholder($color: #000, $f_size: 1em, $l_height: 1.2em) {
+	&::-webkit-input-placeholder {
+	   color: $color;
+	   font-size: $f_size;
+	   line-height: $l_height;
+	}
+
+	&:-moz-placeholder { /* Firefox 18- */
+	   color: $color;
+	   font-size: $f_size;
+	   line-height: $l_height;  
+	}
+
+	&::-moz-placeholder {  /* Firefox 19+ */
+	   color: $color;
+	   font-size: $f_size;
+	   line-height: $l_height;  
+	}
+
+	&:-ms-input-placeholder {  
+	   color: $color;
+	   font-size: $f_size;
+	   line-height: $l_height;  
+	}
+}

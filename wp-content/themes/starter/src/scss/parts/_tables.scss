@@ -1,0 +1,73 @@
+/*--------------------------------------------------------------
+## Tables
+--------------------------------------------------------------*/
+table.invisibleTable tr:hover .mceLayout td {
+	border-top: 1px solid #CCCCCC;
+}
+
+table.invisibleTable tr .mceLayout td table {
+	margin: 10px 0 5px !important;
+}
+
+table.nice_table {
+	width:  100% !important;
+	margin: 20px 0px;
+
+	thead {
+		tr {
+			th, td {
+				font-weight:  bold;
+				padding:      10px 15px;
+				font-size:    16px;
+				font-family:  $primary_font;
+				text-align:   left !important;
+				color:        #FFFFFF;
+				border:       1px solid $prim_color;
+				background:   $prim_color;
+			}
+
+			&:nth-child(n) td {
+				background: $prim_color;
+			}
+		}
+	}
+
+	tr {
+		background-color: #ffffff;
+
+		&:nth-child(odd) {
+			background-color: $grey_bg;
+		}
+
+		td {
+			border:         1px solid $border_color;
+			text-align:     center;
+			padding:        10px 15px;
+			text-align:     left;
+			vertical-align: middle;
+
+			p {
+				padding: 0px;
+				margin:  0px !important;
+			}
+		}
+
+		&.rowDivider {
+			td {
+				border-top: 3px solid $border_color;
+			}
+		}
+	}
+}
+
+table.invisibleTable, table.gsc-search-box {
+	tr, td {
+		border:         0;
+		background:     transparent !important;
+		vertical-align: top !important;
+	}
+}
+
+table.invisibleTable tr, table.invisibleTable td {
+	padding: 5px;
+}
