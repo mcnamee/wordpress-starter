@@ -49,6 +49,11 @@ function wpstarter_setup() {
   ) );
 
   /*
+   * Disable WordPress Admin Bar for all users
+   */
+  show_admin_bar(false);
+
+  /*
    * Enable support for Post Formats.
    * See https://developer.wordpress.org/themes/functionality/post-formats/
    */

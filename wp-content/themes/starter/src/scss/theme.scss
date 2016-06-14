@@ -1,357 +1,349 @@
-///////////////////////////////////////
-///// Import Standard files //////////
-//////////////////////////////////////
-
-// Import custom variables
+// Imports
+// --------------------------------------------------
+@import "bootstrap";
 @import "variables";
 
-// Import custom mixins
-@import "plugins";
+@import "parts/header";
+@import "parts/footer";
+@import "parts/home-template";
+@import "parts/inner-template";
+@import "parts/posts";
+@import "parts/slider";
+@import "parts/off-canvas-menu";
 
-// Import custom mixins
-@import "mixins";
+// General Theme Stuff
+// - Try to put as little as possible in here
+// -- Instead create partials
+// --------------------------------------------------
 
-//////////////////////////////////////
-///// Import Sections ////////////////
-//////////////////////////////////////
+/* Demo Grid Stuff */
+.grid-demo {
+  .row {
+    margin-bottom: 20px;
+  }
 
-@import "parts/typography.scss";
-@import "parts/tables.scss";
-@import "parts/forms.scss";
-@import "parts/slider.scss";
+  .row .row {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
 
-@import "parts/header.scss";
-@import "parts/footer.scss";
-
-@import "parts/home_template.scss";
-@import "parts/inner_template.scss";
-
-@import "parts/posts.scss";
-
-
-//////////////////////////////////////
-///// Generic Theme Styles ///////////
-//////////////////////////////////////
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
-html, body, .onCanvas {
-	background: #EEEEEE;
+  [class*="col-"] {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #eee;
+    background-color: rgba(86,61,124,.15);
+    border: 1px solid #ddd;
+    border: 1px solid rgba(86,61,124,.2);
+  }
 }
 
-body {
-	height:     auto;
-	position:   relative;
+.theme-showcase {
+  .jumbotron {
+    margin-top: 110px;
+  }
 }
 
-html {
-	min-height: 100%;
-	font-family: sans-serif;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust:     100%;
+// Flatly 3.3.5
+// Bootswatch
+// -----------------------------------------------------
+
+$web-font-path: "https://fonts.googleapis.com/css?family=Open+Sans:300,400,800" !default;
+@import url($web-font-path);
+
+// Buttons ====================================================================
+
+.btn {
+  border-width: 2px;
 }
 
-body {
-	margin: 0;
+.btn:active {
+  @include box-shadow(none);
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
-	display: block;
+.btn-group.open .dropdown-toggle {
+  @include box-shadow(none);
 }
 
-audio,
-canvas,
-progress,
-video {
-	display: inline-block;
-	vertical-align: baseline;
+// Typography =================================================================
+
+.text-primary,
+.text-primary:hover {
+  color: $brand-primary;
 }
 
-audio:not([controls]) {
-	display: none;
-	height: 0;
+.text-success,
+.text-success:hover {
+  color: $brand-success;
 }
 
-[hidden],
-template {
-	display: none;
+.text-danger,
+.text-danger:hover {
+  color: $brand-danger;
 }
 
-a {
-	background-color: transparent;
-	outline: none !important;
+.text-warning,
+.text-warning:hover {
+  color: $brand-warning;
 }
 
-a:active,
-a:hover {
-	outline: 0;
+.text-info,
+.text-info:hover {
+  color: $brand-info;
 }
 
-abbr[title] {
-	border-bottom: 1px dotted;
+// Tables =====================================================================
+
+table,
+.table {
+
+  a:not(.btn) {
+    text-decoration: underline;
+  }
+
+  .dropdown-menu a {
+    text-decoration: none;
+  }
+
+  .success,
+  .warning,
+  .danger,
+  .info {
+    color: #fff;
+
+    > th > a,
+    > td > a,
+    > a {
+      color: #fff;
+    }
+  }
+
+  > thead > tr > th,
+  > tbody > tr > th,
+  > tfoot > tr > th,
+  > thead > tr > td,
+  > tbody > tr > td,
+  > tfoot > tr > td {
+    border: none;
+  }
+
+  &-bordered > thead > tr > th,
+  &-bordered > tbody > tr > th,
+  &-bordered > tfoot > tr > th,
+  &-bordered > thead > tr > td,
+  &-bordered > tbody > tr > td,
+  &-bordered > tfoot > tr > td {
+    border: 1px solid $table-border-color;
+  }
 }
 
-b,
-strong {
-	font-weight: bold;
+// Forms ======================================================================
+
+.form-control,
+input {
+  border-width: 2px;
+  @include box-shadow(none);
+
+  &:focus {
+    @include box-shadow(none);
+  }
 }
 
-dfn {
-	font-style: italic;
+.has-warning {
+  .help-block,
+  .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label,
+  .form-control-feedback {
+    color: $brand-warning;
+  }
+
+  .form-control,
+  .form-control:focus {
+    border: 2px solid $brand-warning;
+  }
+
+  .input-group-addon {
+    border-color: $brand-warning;
+  }
 }
 
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
+.has-error {
+  .help-block,
+  .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label,
+  .form-control-feedback {
+    color: $brand-danger;
+  }
+
+  .form-control,
+  .form-control:focus {
+    border: 2px solid $brand-danger;
+  }
+
+  .input-group-addon {
+    border-color: $brand-danger;
+  }
 }
 
-mark {
-	background: #ff0;
-	color: #000;
+.has-success {
+  .help-block,
+  .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label,
+  .form-control-feedback {
+    color: $brand-success;
+  }
+
+  .form-control,
+  .form-control:focus {
+    border: 2px solid $brand-success;
+  }
+
+  .input-group-addon {
+    border-color: $brand-success;
+  }
 }
 
-small {
-	font-size: 80%;
+// Navs =======================================================================
+
+.nav {
+  .open > a,
+  .open > a:hover,
+  .open > a:focus {
+    border-color: transparent;
+  }
 }
 
-sub,
-sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
+.pager {
+  a,
+  a:hover {
+    color: #fff;
+  }
+
+  .disabled {
+    &>a,
+    &>a:hover,
+    &>a:focus,
+    &>span {
+      background-color: $pagination-disabled-bg;
+    }
+  }
 }
 
-sup {
-	top: -0.5em;
+// Indicators =================================================================
+
+.close {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.4;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    opacity: 1;
+  }
 }
 
-sub {
-	bottom: -0.25em;
+.alert {
+
+  .alert-link {
+    color: #fff;
+    text-decoration: underline;
+  }
 }
 
-img {
-	border: 0;
+// Progress bars ==============================================================
+
+.progress {
+  height: 10px;
+  @include box-shadow(none);
+  .progress-bar {
+    font-size: 10px;
+    line-height: 10px;
+  }
 }
 
-svg:not(:root) {
-	overflow: hidden;
+// Containers =================================================================
+
+.well {
+  @include box-shadow(none);
 }
 
-figure {
-	margin: 1em 40px;
+a.list-group-item {
+
+  &.active,
+  &.active:hover,
+  &.active:focus {
+    border-color: $list-group-border;
+  }
+
+  &-success {
+    &.active {
+      background-color: $state-success-bg;
+    }
+
+    &.active:hover,
+    &.active:focus {
+      background-color: darken($state-success-bg, 5%);
+    }
+  }
+
+  &-warning {
+    &.active {
+      background-color: $state-warning-bg;
+    }
+
+    &.active:hover,
+    &.active:focus {
+      background-color: darken($state-warning-bg, 5%);
+    }
+  }
+
+  &-danger {
+    &.active {
+      background-color: $state-danger-bg;
+    }
+
+    &.active:hover,
+    &.active:focus {
+      background-color: darken($state-danger-bg, 5%);
+    }
+  }
 }
 
-hr {
-	box-sizing: content-box;
-	height: 0;
+.panel {
+  &-default {
+    .close {
+      color: $text-color;
+    }
+  }
 }
 
-pre {
-	overflow: auto;
+.modal {
+  .close {
+    color: $text-color;
+  }
 }
 
-code,
-kbd,
-pre,
-samp {
-	font-family: monospace, monospace;
-	font-size: 1em;
-}
-
-/*--------------------------------------------------------------
-# Site Parts
---------------------------------------------------------------*/
-.site-header, .site-content, .site-footer {
-	position: relative;
-	display: block;
-	float: left;
-	width: 100%;
-}
-
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-.alignleft {
-	display: inline;
-	float: left;
-	margin-right: 1.5em;
-}
-
-.alignright {
-	display: inline;
-	float: right;
-	margin-left: 1.5em;
-}
-
-.aligncenter {
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
-	content: "";
-	display: table;
-	table-layout: fixed;
-}
-
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
-	clear: both;
-}
-
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-.widget {
-	margin: 0 0 1.5em;
-}
-
-/* Make sure select elements fit in widgets. */
-.widget select {
-	max-width: 100%;
-}
-
-/*--------------------------------------------------------------
-# WORDPRESS
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Asides
---------------------------------------------------------------*/
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-	display: none;
-}
-
-/*--------------------------------------------------------------
-## Comments
---------------------------------------------------------------*/
-.comment-content a {
-	word-wrap: break-word;
-}
-
-.bypostauthor {
-	display: block;
-}
-
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
-}
-
-/* Make sure embeds and iframes fit their containers. */
-embed,
-iframe,
-object {
-	max-width: 100%;
-}
-
-/*--------------------------------------------------------------
-## Captions
---------------------------------------------------------------*/
-.wp-caption {
-	margin-bottom: 1.5em;
-	max-width: 100%;
-}
-
-.wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
-}
-
-.wp-caption-text {
-	text-align: center;
-}
-
-/*--------------------------------------------------------------
-## Galleries
---------------------------------------------------------------*/
-.gallery {
-	margin-bottom: 1.5em;
-}
-
-.gallery-item {
-	display: inline-block;
-	text-align: center;
-	vertical-align: top;
-	width: 100%;
-}
-
-.gallery-columns-2 .gallery-item {
-	max-width: 50%;
-}
-
-.gallery-columns-3 .gallery-item {
-	max-width: 33.33%;
-}
-
-.gallery-columns-4 .gallery-item {
-	max-width: 25%;
-}
-
-.gallery-columns-5 .gallery-item {
-	max-width: 20%;
-}
-
-.gallery-columns-6 .gallery-item {
-	max-width: 16.66%;
-}
-
-.gallery-columns-7 .gallery-item {
-	max-width: 14.28%;
-}
-
-.gallery-columns-8 .gallery-item {
-	max-width: 12.5%;
-}
-
-.gallery-columns-9 .gallery-item {
-	max-width: 11.11%;
-}
-
-.gallery-caption {
-	display: block;
+.popover {
+  color: $text-color;
 }

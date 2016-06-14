@@ -96,7 +96,7 @@ var themeDir = 'wp-content/themes/starter/';
     gulp.task('default', ['initialBuild'], function() {
       /* Start BrowserSync */
       var files = [
-        themeDir + 'dist/**/*',
+        'wp-content/**/*',
       ];
 
       browserSync.init(files, {

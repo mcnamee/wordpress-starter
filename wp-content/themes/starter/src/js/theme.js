@@ -27,19 +27,6 @@
 
 
 /* 	============================================
-	bPopup Init - http://dinbror.dk/bpopup/ for more Information
-	============================================ */
-
-	jQuery(document).on('click', '.bPopup', '', function($) {
-		$('[data-js=js_bPopup]').bPopup({
-			transition: 'slideDown',
-			closeClass:'close_js'
-		});
-		return false;
-	});
-
-
-/* 	============================================
  Qtip
  ============================================ */
 	jQuery(function($){
@@ -94,73 +81,6 @@
 		});
 	});
 
-	/* 	============================================
-	Product image slider
-	============================================ */
-
-
-	jQuery(window).load(function() {
-		jQuery('.slickslider_gallery').slick({
-			infinite: true,
-			slidesToShow: 1,
-			asNavFor: '.slickslider_gallery_thumbs',
-			speed: 400,
-			slidesToScroll: 1,
-			arrows: true,
-			prevArrow: "<span class='slicknav prev_arrow'></span>",
-			nextArrow: "<span class='slicknav next_arrow'></span>",
-			touchMove: false,
-			adaptiveHeight: true,
-			swipe: false,
-			lazyLoad: 'progressive',
-			responsive: [
-				{
-				  breakpoint: 767,
-				  settings: {
-				  	swipe: true,
-				    touchMove: true,
-				  }
-				}
-			]
-		});
-
-		jQuery('.slickslider_gallery_thumbs').slick({
-			infinite: true,
-			slidesToShow: 3,
-			slidesToScroll: 1,
-			asNavFor: '.slickslider_gallery',
-			focusOnSelect: true,
-			infinite: true,
-			speed: 400,
-			arrows: false,
-			prevArrow: "<span class='slicknav prev_arrow'></span>",
-			nextArrow: "<span class='slicknav next_arrow'></span>",
-			touchMove: false,
-			swipe: false,
-			centerMode: true,
-			lazyLoad: 'progressive',
-			responsive: [
-				{
-				  breakpoint: 1023,
-				  settings: {
-				  	swipe: true,
-				    touchMove: true,
-				    slidesToShow: 2,
-				  }
-				},
-				{
-				  breakpoint: 767,
-				  settings: {
-				  	swipe: true,
-				    touchMove: true,
-				    slidesToShow: 2,
-				  }
-				}
-			]
-		});
-	});
-
-
 /* 	============================================
 	Superfish Drop Down Menu Init
 	============================================ */
@@ -179,36 +99,6 @@
 	============================================ */
   jQuery('#offcanv_menu').offCanvasMenu();
 
-
-
-/* 	============================================
-	Collapsible Content Sections
-	============================================ */
-	jQuery(function($) {
-		// Hide closed content on page load.
-		$('.collapse_header.closed + .collapse_content').hide();
-
-		// Show / Hide the content when the header is clicked.
-		$('.collapse_header').click(function(){
-
-			// Ignore if still locked!
-			if ($(this).hasClass('locked')) return false;
-
-			var header = $(this);
-			var content = $(this).next('.collapse_content');
-
-			if(header.hasClass('closed')){
-				// If it's closed, open it again.
-				header.removeClass('closed');
-				content.slideDown();
-			} else {
-				// Else, close it.
-				content.stop().slideUp();
-				header.addClass('closed');
-			}
-			return false;
-		});
-	});
 
 /* 	============================================
 	Fancy inputs

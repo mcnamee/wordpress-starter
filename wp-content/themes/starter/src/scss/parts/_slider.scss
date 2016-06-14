@@ -1,6 +1,5 @@
-/*--------------------------------------------------------------
-## Slickslider standard styles
---------------------------------------------------------------*/
+// Slickslider standard styles
+// --------------------------------------------------
 .slickslider {
 	background: #ccc;
 	overflow: hidden;
@@ -26,7 +25,7 @@
 				margin-top: 20px;
 			}
 
-			@media(max-width: $grid_s) {
+			@media(max-width: $screen-sm-max) {
 				text-align: center;
 			}
 		}
@@ -35,7 +34,7 @@
 	// Slick Dots Navigation
 
 	ul.slick-dots {
-		@include box-sizing();
+    box-sizing: border-box;
 		position: absolute;
 		bottom: 0;
 		width: 100%;
@@ -55,7 +54,7 @@
 				height: 15px;
 				width: 15px;
 				line-height: 15px;
-				@include border-all-radius(50%);
+				border-radius: 50%;
 				box-shadow: none!important;
 				text-indent: 0;
 				background: #404042;
@@ -64,7 +63,7 @@
 			&.slick-active {
 
 				button {
-					background: $prim_color;
+					background: $brand-primary;
 				}
 			}
 		}
@@ -82,7 +81,7 @@
 		margin-top: -25px;
 		z-index: 99;
 		color: #fff;
-		background: $prim_color;
+		background: $brand-primary;
 		text-align: center;
 		font-size: 30px;
 
@@ -106,18 +105,18 @@
 		}
 
 		&.next_arrow, &.prev_arrow {
-			@include transition();
+			transition: all linear 0.2s;
 			display: block;
 
 			&:hover {
-				background: lighten($prim_color, 10%);
+				background: lighten($brand-primary, 10%);
 			}
 
 			&:active {
-				background: lighten($prim_color, 15%);
+				background: lighten($brand-primary, 15%);
 			}
 		}
-		@media(max-width: $grid_s) {
+		@media(max-width: $screen-sm-max) {
 			display: none!important;
 		}
 	}

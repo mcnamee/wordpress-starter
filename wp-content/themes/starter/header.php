@@ -2,7 +2,7 @@
 /**
  * The header for our theme.
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
+ * This is the template that displays all of the <head> section and the header
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
@@ -18,10 +18,10 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <!-- ICONS -->
-<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/ms-tile-icon.png" />
+<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/dist/img/ms-tile-icon.png" />
 <meta name="msapplication-TileColor" content="#8cc641" />
-<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
-<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon.png" />
+<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/dist/img/favicon.ico" />
+<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/dist/img/apple-touch-icon.png" />
 
 <!-- WP_HEAD -->
 <?php wp_head(); ?>

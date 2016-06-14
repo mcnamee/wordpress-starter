@@ -1,44 +1,31 @@
-/* ================================= */
-/* Header */
-/* ================================= */
-.site-header {
-	background-color: #FAFAFA;
-	display:          block;
-	width:            100%;
-	float:            left;
-	padding:          10px 0;
-	position:         relative;
+// Navbar
+// --------------------------------------------------
+.navbar {
+  border-width: 0;
 
-	a.logo {
-		margin:      0px 0px 15px 0px;
-		padding:     0px;
-		text-indent: -9999px;
-		z-index:     2;
-		height:      100px;
-		width:       200px;
-		display:     block;
-		position:    relative;
-		background:  url(/assets/images/backgrounds/default-logo.png) top left no-repeat;
+  &-default {
 
-		@media (max-width: $grid_s) {
-			height          : 50px;
-			width           : 100px;
-			background-size : 100% auto;
-			float           : left;
-			margin-bottom   : 0;
-		}
-	}
+    .badge {
+      background-color: #fff;
+      color: $navbar-default-bg;
+    }
+  }
 
-	@media (max-width: $grid_s) {
-		height  : 50px;
-		padding : 0;
-		margin-bottom : 15px;
-	}
+  &-inverse {
+
+    .badge {
+      background-color: #fff;
+      color: $navbar-inverse-bg;
+    }
+  }
+
+  &-brand {
+    line-height: 1;
+  }
 }
 
-/* ================================= */
-/* OffCanvas Menu */
-/* ================================= */
+// Offcanvas Menu
+// --------------------------------------------------
 a.offCanvas_trigger {
 	margin: 13px 0 0 0;
 	height: 22px;
@@ -46,7 +33,7 @@ a.offCanvas_trigger {
 
 .offCanvas_trigger.offCanvas_trigger_open .offCanvas_trigger_item,
 .offCanvas_trigger_item {
-	background: $prim_color;
+	background: $brand-primary;
 }
 
 ul.offCanvas_menu li.members_menu_div {
@@ -59,9 +46,8 @@ ul.offCanvas_menu li.members_menu_div {
 	width: 260px;
 }
 
-/* ================================= */
-/* Navigation Menu DROP DOWN MENU */
-/* ================================= */
+// Drop Down Nav
+// --------------------------------------------------
 /* Superfish Default */
 ul#primary-menu, ul#primary-menu * {
 	margin:     0;
@@ -71,7 +57,7 @@ ul#primary-menu, ul#primary-menu * {
 }
 
 ul#primary-menu {
-	background: $prim_color;
+	background: $brand-primary;
 }
 
 ul#primary-menu li {
@@ -192,7 +178,7 @@ ul#primary-menu > li > a {
 
 ul#primary-menu a,
 ul#primary-menu a:visited {
-	background:         $prim_color;
+	background:         $brand-primary;
 	color:              #FFFFFF;
 	border-left:        1px solid rgba(0, 0, 0, 0.2);
 	padding:            14px 15px;
@@ -208,7 +194,7 @@ ul#primary-menu a:visited {
 }
 
 ul#primary-menu a:hover, ul#primary-menu li.current > a {
-	background: lighten($prim_color, 8%);
+	background: lighten($brand-primary, 8%);
 }
 
 ul#primary-menu li:first-child a {
