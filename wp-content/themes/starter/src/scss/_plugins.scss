@@ -1,8 +1,15 @@
+// Bower components
+// --------------------------------------------------
+@import "../../../../../bower_components/jquery-colorbox/example3/colorbox.css";
+@import "../../../../../bower_components/qtip2/jquery.qtip.min.css";
+@import "../../../../../bower_components/slick-carousel/slick/slick.scss";
+
+
 // Bootstrap
 // --------------------------------------------------
 
 // ! IMPORTANT !
-// This file contains the variables - comment out the one below
+// This file contains the variables - comment out the default one below
 @import "./variables";
 $icon-font-path: "../fonts/";
 
@@ -54,10 +61,10 @@ $icon-font-path: "../fonts/";
 @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/close";
 
 // Components w/ JavaScript
-@import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/modals";
-@import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/tooltip";
+// @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/modals";
+// @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/tooltip";
 @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/popovers";
-@import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/carousel";
+// @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/carousel";
 
 // Utility classes
 @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/utilities";

@@ -1,45 +1,82 @@
-[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
+Wordpress Starter Framework
+=======
 
-_s
-===
+## Why?
+Getting Wordpress itself setup is simple. However everytime I went to setup a new project, I found I'd consistently think - how do I get this done again?
 
-Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+The complexity is that Wordpress and a bunch of plugins I use have their own auto-update magic + of course user generated content (image/file uploads). So, I don't want the whole project tracked in Git, I only want the code I write tracked.
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
+Basically, I want:
+- __My project specific code__ - (both theme and plugins) tracked in the project's Git Repo
+- __Everything else__ left to its own thing
 
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* A helpful 404 template.
-* A sample custom header implementation in `inc/custom-header.php` that can be activated by uncommenting one line in `functions.php` and adding the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
-* Custom template tags in `inc/template-tags.php` that keep your templates clean and neat and prevent code duplication.
-* Some small tweaks in `inc/extras.php` that can improve your theming experience.
-* A script at `js/navigation.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It's enqueued in `functions.php`.
-* 2 sample CSS layouts in `layouts/` for a sidebar on either side of your content.
-* Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
-* Licensed under GPLv2 or later. :) Use it to make something cool.
+***
 
-Getting Started
----------------
+## Who's this for?
+Developers who build custom sites.
 
-If you want to keep it simple, head over to http://underscores.me and generate your `_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
+***
 
-If you want to set things up manually, download `_s` from GitHub. The first thing you want to do is copy the `_s` directory and change the name to something else (like, say, `megatherium`), and then you'll need to do a five-step find and replace on the name in all the templates.
+## Features
 
-1. Search for `'_s'` (inside single quotations) to capture the text domain.
-2. Search for `_s_` to capture all the function names.
-3. Search for `Text Domain: _s` in style.css.
-4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks.
-5. Search for `_s-` to capture prefixed handles.
+| Title | Description |
+|---|---|
+| __Wordpress Git Framework__ | An opinionated way to structure a Wordpress project. __Custom Code__ is tracked within your Git repo and __Everything Else__ (Wordpress, other generic plugins) is not (they may update themselves without affecting your repo). |
+| __Performant Wordpress Starter Theme__ | A very vanilla Wordpress theme to start any custom project with. |
+| __Example Wordpress Plugin__ | Coming soon... |
+| __Gulp__ | Gulp is setup and ready to build out your front-end code. |
 
-OR
+### Build Tools - Gulp
+Gulp is configured and ready to go. It'll do a bunch of things for you:
 
-* Search for: `'_s'` and replace with: `'megatherium'`
-* Search for: `_s_` and replace with: `megatherium_`
-* Search for: `Text Domain: _s` and replace with: `Text Domain: megatherium` in style.css.
-* Search for: <code>&nbsp;_s</code> and replace with: <code>&nbsp;Megatherium</code>
-* Search for: `_s-` and replace with: `megatherium-`
+- Optimise image assets (theme specific images - not user generated)
+- Compiles your SCSS, turning it into an optimized CSS file
+- Concatinates & Minifies your project JS
+- Runs [BrowserSync](http://browsersync.io) - auto-reloads the browser, allows you to preview the site on multiple devices
 
-Then, update the stylesheet header in `style.css` and the links in `footer.php` with your own information. Next, update or delete this readme.
+### Theme Front-End Libraries
+This project uses [Bower](https://bower.io/) to manage front-end dependencies.
 
-Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
+- [Bootstrap](http://getbootstrap.com/)
+- [jQuery](https://jquery.com/)
+- [qTip2](http://qtip2.com/) for Tooltips
+- [Slick Carousel](http://kenwheeler.github.io/slick/) for Carousels/Sliders
+- [SuperFish](http://users.tpg.com.au/j_birch/plugins/superfish/) for Drop-Down Menus
+- [Colorbox](http://www.jacklmoore.com/colorbox/) for Lightboxes
+- [Off Canvas Menu](http://codepen.io/mcnamee/pen/Wbvoew) for Mobile Menus
 
-Good luck!
+***
+
+## Setup / Installation
+
+### 1.0 Wordpress
+1. Setup Project Dir - `mkdir example && cd example` (where example is your project name)
+2. Install Wordpress - `git clone https://github.com/WordPress/WordPress .`
+3. Remove Wordpress Git - `rm -rf .git`
+4. Install this theme - `git init && git remote add origin https://github.com/mcnamee/wordpress-starter && git fetch && git checkout -t origin/master`
+5. Remove Git again, so that you can start/add your own project repo - `rm -rf .git`
+6. Visit the Wordpress URL and run the normal Wordpress Setup
+
+### 2.0 Package Dependencies
+1. Install dependencies - `npm install`
+2. Install front-end dependencies - `bower install`
+3. Edit /gulpfile.js - within the BrowserSync task, change `proxy: 'localhost',` to the URL of the this project.
+4. Run the initial build - `gulp initialBuild`
+
+### 3.0 Change the Name of the Theme
+1. Rename the theme name - `mv wp-content/themes/starter wp-content/themes/new-name` (where new-name is the directory name)
+2. Ensure Git tracks the new directory - update `/.gitignore` - changing reference of `/wp-content/themes/starter` to the new dir name
+3. Update Gulp to build from the right directory - update the themeDir variable in `/gulpfile.js` to point to the right place
+
+### 4.0 Clean Up (Optional)
+- Remove default WP themes - `rm -rf wp-content/themes/twentyfifteen && rm -rf wp-content/themes/twentyfourteen && rm -rf wp-content/themes/twentysixteen`
+- Remove default WP plugins - `rm wp-content/plugins/hello.php`
+
+***
+
+## Troubleshooting
+
+### Managing Javascript / JS Packages
+All Javascript dependencies are minified & concatinated into a single JS file, via Gulp
+
+- Manage which JS files are included via the files array in `/gulpfile.js`

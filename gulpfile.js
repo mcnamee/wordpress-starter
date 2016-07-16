@@ -66,9 +66,24 @@ var themeDir = 'wp-content/themes/starter/';
 /*  Concat and Minify JS (gulp js)
     - Looks for all bower components + src/assets/js files
     ************************* */
-    gulp.task('js', function () {
-      // All Bower main JS files
-      var files = bowerLib.ext('js').files;
+    gulp.task('js', function() {
+      // Add/Remove any files you'd like to minify/concatinate to this array
+      var files = [
+        'bower_components/jquery/dist/jquery.min.js',
+        'bower_components/bootstrap-sass/assets/javascripts/affix.js',
+        'bower_components/bootstrap-sass/assets/javascripts/alert.js',
+        'bower_components/bootstrap-sass/assets/javascripts/button.js',
+        'bower_components/bootstrap-sass/assets/javascripts/dropdown.js',
+        'bower_components/bootstrap-sass/assets/javascripts/collapse.js',
+        'bower_components/bootstrap-sass/assets/javascripts/popover.js',
+        'bower_components/bootstrap-sass/assets/javascripts/tab.js',
+        'bower_components/bootstrap-sass/assets/javascripts/transition.js',
+        'bower_components/jquery-colorbox/jquery.colorbox-min.js',
+        'bower_components/superfish/dist/js/superfish.min.js',
+        'bower_components/jquery-hoverintent/jquery.hoverintent.js',
+        'bower_components/qtip2/jquery.qtip.min.js',
+        'bower_components/slick-carousel/slick/slick.min.js',
+      ];
 
       // All src/assets/js files
       files.push(themeDir + 'src/js/**/*.js');

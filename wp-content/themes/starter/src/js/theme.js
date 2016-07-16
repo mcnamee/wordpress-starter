@@ -51,12 +51,11 @@
 		}
 	});
 
-
 /* 	============================================
 	Banner Init - Slick Slider
 	============================================ */
 	jQuery(window).load(function() {
-		jQuery('.slickslider_banner').slick({
+		jQuery('[data-slider]').slick({
 			infinite: true,
 			dots: true,
 			slidesToShow: 1,
@@ -65,8 +64,8 @@
 		  autoplaySpeed: 5000,
 			slidesToScroll: 1,
 			arrows: true,
-			prevArrow: "<span class='slicknav prev_arrow'></span>",
-			nextArrow: "<span class='slicknav next_arrow'></span>",
+			prevArrow: "<span class='slicknav prev-arrow'></span>",
+			nextArrow: "<span class='slicknav next-arrow'></span>",
 			touchMove: false,
 			swipe: false,
 			responsive: [
@@ -84,14 +83,13 @@
 /* 	============================================
 	Superfish Drop Down Menu Init
 	============================================ */
-  var sfOptions = {
+  var mainNav = jQuery('#primary-menu').superfish({
     popUpSelector: 'ul, .sf-mega',
     speed: 'normal',
     speedOut: 'normal',
     cssArrows: false,
     animation: {opacity:'show'}
-  }
-  var mainNav = jQuery('#primary-menu').superfish(sfOptions);
+  });
 
 
 /* 	============================================

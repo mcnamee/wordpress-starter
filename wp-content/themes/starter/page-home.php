@@ -11,19 +11,15 @@
 
 get_header(); ?>
 
-  <div id="primary" class="content-area">
+  <div class="container_fluid">
     <main id="main" class="site-main" role="main">
-
       <?php
-      while ( have_posts() ) : the_post();
-
-        get_template_part( 'blocks/banner', 'hero' );
-
-      endwhile; // End of the loop.
+        while ( have_posts() ) : the_post();
+          get_template_part( 'blocks/banner', 'hero' );
+        endwhile;
       ?>
-
-    </main><!-- #main -->
-  </div><!-- #primary -->
+    </main> <!-- #main -->
+  </div> <!-- /.container -->
 
 <?php
 get_footer();

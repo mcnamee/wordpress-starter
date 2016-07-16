@@ -14,21 +14,23 @@
 
 get_header(); ?>
 
-  <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
+  <div class="container">
 
-      <?php
-      while ( have_posts() ) : the_post();
+    <div class="col-sm-8">
+      <main id="main" class="site-main" role="main">
+        <?php
+          while ( have_posts() ) : the_post();
+            get_template_part( 'blocks/content', 'page' );
+          endwhile;
+        ?>
+      </main> <!-- #main -->
+    </div> <!-- /.col -->
 
-        get_template_part( 'blocks/content', 'page' );
-
-      endwhile; // End of the loop.
-      ?>
-
+    <div class="col-sm-4">
       <?php get_sidebar(); ?>
+    </div> <!-- /.col -->
 
-    </main><!-- #main -->
-  </div><!-- #primary -->
+  </div> <!-- /.container -->
 
 <?php
 get_footer();

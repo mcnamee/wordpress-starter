@@ -10,16 +10,17 @@
  */
 
 ?>
+  </div> <!-- #content -->
 
-    </div><!-- #content -->
-
-    <footer id="colophon" class="site-footer" role="contentinfo">
+  <footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="container">
       <div class="site-info">
         Website by - <a href="http://www.pivotalagency.com.au" rel="nofollow" target="_blank">Pivotal Agency</a>
-      </div><!-- .site-info -->
-    </footer><!-- #colophon -->
-  </div><!-- #page -->
-</div><!-- .onCanvas -->
+      </div> <!-- .site-info -->
+    </div> <!-- /.container -->
+  </footer> <!-- #colophon -->
+
+</div> <!-- .onCanvas -->
 
 <?php wp_footer(); ?>
 

@@ -27,27 +27,29 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> role="document">
+
 <div class="offCanvas" data-menu="offcanv_menu">
   <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'offCanvas_menu' ) ); ?>
 </div> <!-- /.offCanvas -->
 
 <div class="onCanvas">
-  <div id="page" class="site">
-    <header id="masthead" class="site-header" role="banner">
-      <div class="site-branding grid_12 grid_12_s grid_12_xs">
-        <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-      </div><!-- .site-branding -->
+  <header class="site-header">
+    <div class="container">
+      <div class="col-xs-8 col-md-4">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="header-logo">
+          <?php bloginfo( 'name' ); ?>
+        </a>
+      </div> <!-- /.col -->
 
-      <div class="visible_phone grid_12 grid_12_s grid_12_xs">
+      <div class="col-xs-4 visible-xs">
         <a href="#" id="offcanv_menu"></a>
-      </div> <!-- /.grid -->
+      </div> <!-- /.col -->
 
-      <div class="clear"></div>
-
-      <nav id="site-navigation" class="main-navigation hidden_phone" role="navigation">
+      <div class="col-md-8 hidden-xs">
         <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-      </nav><!-- #site-navigation -->
-    </header><!-- #masthead -->
+      </div> <!-- /.col -->
+    </div> <!-- /.container -->
+  </header>
 
-    <div id="content" class="site-content">
+  <div id="content" class="site-content">

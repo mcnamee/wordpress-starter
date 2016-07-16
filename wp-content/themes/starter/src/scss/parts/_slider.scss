@@ -4,18 +4,18 @@
 	background: #ccc;
 	overflow: hidden;
 
-	&, .banner_text {
+	&, .banner-text {
 		height: 300px;
 	}
 
-	.slide_container {
+	.slide-container {
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
 		position: relative;
 		outline: none;
 
-		.banner_text {
+		.banner-text {
 
 			h2 {
 				font-size: 36px;
@@ -85,7 +85,7 @@
 		text-align: center;
 		font-size: 30px;
 
-		&.next_arrow {
+		&.next-arrow {
 			right: 0;
 
 			&:before {
@@ -94,7 +94,7 @@
 				font-family: "FontAwesome";
 			}
 		}
-		&.prev_arrow  {
+		&.prev-arrow  {
 			left: 0;
 
 			&:before {
@@ -104,7 +104,7 @@
 			}
 		}
 
-		&.next_arrow, &.prev_arrow {
+		&.next-arrow, &.prev-arrow {
 			transition: all linear 0.2s;
 			display: block;
 

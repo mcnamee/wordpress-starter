@@ -1,8 +1,9 @@
 // Imports
 // --------------------------------------------------
-@import "bootstrap";
+@import "plugins";
 @import "variables";
 
+// My partials
 @import "parts/header";
 @import "parts/footer";
 @import "parts/home-template";
@@ -16,7 +17,11 @@
 // -- Instead create partials
 // --------------------------------------------------
 
-/* Demo Grid Stuff */
+$web-font-path: "https://fonts.googleapis.com/css?family=Open+Sans:300,400,800" !default;
+@import url($web-font-path);
+
+// Demo Style Guide Stuff ====================================================================
+
 .grid-demo {
   .row {
     margin-bottom: 20px;
@@ -37,23 +42,23 @@
   }
 }
 
-.theme-showcase {
-  .jumbotron {
-    margin-top: 110px;
-  }
+// Defaults ====================================================================
+
+html, body {
+  background-color: $gray-lighter;
 }
 
-// Flatly 3.3.5
-// Bootswatch
-// -----------------------------------------------------
+// Content ====================================================================
 
-$web-font-path: "https://fonts.googleapis.com/css?family=Open+Sans:300,400,800" !default;
-@import url($web-font-path);
+.site-content {
+  padding: 50px 0;
+}
 
 // Buttons ====================================================================
 
 .btn {
   border-width: 2px;
+  outline: none !important;
 }
 
 .btn:active {
@@ -62,6 +67,10 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Open+Sans:300,400,800" 
 
 .btn-group.open .dropdown-toggle {
   @include box-shadow(none);
+}
+
+button, input[type="submit"] {
+  @extend .btn;
 }
 
 // Typography =================================================================
@@ -221,6 +230,10 @@ input {
   .input-group-addon {
     border-color: $brand-success;
   }
+}
+
+input[type="text"], input[type="search"], input[type="email"], input[type="number"], input[type="url"], input[type="password"], textarea {
+  @extend .form-control;
 }
 
 // Navs =======================================================================

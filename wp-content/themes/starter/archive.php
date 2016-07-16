@@ -9,43 +9,51 @@
 
 get_header(); ?>
 
-  <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
+  <div class="container">
 
-    <?php
-    if ( have_posts() ) : ?>
-
-      <header class="page-header">
-        <?php
-          the_archive_title( '<h1 class="page-title">', '</h1>' );
-          the_archive_description( '<div class="taxonomy-description">', '</div>' );
-        ?>
-      </header><!-- .page-header -->
+    <div class="col-sm-8">
+      <main id="main" class="site-main" role="main">
 
       <?php
-      /* Start the Loop */
-      while ( have_posts() ) : the_post();
+      if ( have_posts() ) : ?>
 
-        /*
-         * Include the Post-Format-specific template for the content.
-         * If you want to override this in a child theme, then include a file
-         * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-         */
-        get_template_part( 'blocks/content', get_post_format() );
+        <header class="page-header">
+          <?php
+            the_archive_title( '<h1 class="page-title">', '</h1>' );
+            the_archive_description( '<div class="taxonomy-description">', '</div>' );
+          ?>
+        </header> <!-- .page-header -->
 
-      endwhile;
+        <?php
+        /* Start the Loop */
+        while ( have_posts() ) : the_post();
 
-      the_posts_navigation();
+          /*
+           * Include the Post-Format-specific template for the content.
+           * If you want to override this in a child theme, then include a file
+           * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+           */
+          get_template_part( 'blocks/content', get_post_format() );
 
-    else :
+        endwhile;
 
-      get_template_part( 'blocks/content', 'none' );
+        the_posts_navigation();
 
-    endif; ?>
+      else :
 
-    </main><!-- #main -->
-  </div><!-- #primary -->
+        get_template_part( 'blocks/content', 'none' );
+
+      endif; ?>
+
+      </main> <!-- #main -->
+
+    </div> <!-- /.col -->
+
+    <div class="col-sm-4">
+      <?php get_sidebar(); ?>
+    </div> <!-- /.col -->
+
+  </div> <!-- /.container -->
 
 <?php
-get_sidebar();
 get_footer();
