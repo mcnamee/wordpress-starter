@@ -15,7 +15,7 @@
   <footer id="colophon" class="site-footer" role="contentinfo">
     <div class="container">
       <div class="site-info">
-        Website by - <a href="http://www.pivotalagency.com.au" rel="nofollow" target="_blank">Pivotal Agency</a>
+        &copy; <?=date('Y')?> <?php bloginfo( 'name' ); ?>. All Rights Reserved.
       </div> <!-- .site-info -->
     </div> <!-- /.container -->
   </footer> <!-- #colophon -->

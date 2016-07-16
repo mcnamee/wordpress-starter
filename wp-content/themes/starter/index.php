@@ -15,42 +15,46 @@
 get_header(); ?>
 
   <div class="container">
+    <div class="row">
 
-    <div class="col-sm-8">
-      <main id="main" class="site-main" role="main">
+      <div class="col-sm-8">
+        <main id="main" class="site-main" role="main">
 
-      <?php
-        if ( have_posts() ) :
+        <?php
+          if ( have_posts() ) :
 
-          if ( is_home() && ! is_front_page() ) : ?>
-            <header>
-              <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-            </header>
-          <?php endif; ?>
-      <?php
-          /* Start the Loop */
-          while ( have_posts() ) : the_post();
-            /*
-             * Include the Post-Format-specific template for the content.
-             * If you want to override this in a child theme, then include a file
-             * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-             */
-            get_template_part( 'blocks/content', get_post_format() );
-          endwhile;
-          the_posts_navigation();
+            if ( is_home() && ! is_front_page() ) : ?>
+              <header>
+                <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+              </header>
+            <?php endif; ?>
+        <?php
+            /* Start the Loop */
+            while ( have_posts() ) : the_post();
+              /*
+               * Include the Post-Format-specific template for the content.
+               * If you want to override this in a child theme, then include a file
+               * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+               */
+              get_template_part( 'blocks/content', get_post_format() );
+            endwhile;
+            the_posts_navigation();
 
-        else :
-          get_template_part( 'blocks/content', 'none' );
-        endif;
-      ?>
+          else :
+            get_template_part( 'blocks/content', 'none' );
+          endif;
+        ?>
 
-      </main> <!-- #main -->
-    </div> <!-- /.col -->
+        </main> <!-- #main -->
+      </div> <!-- /.col -->
 
-    <div class="col-sm-4">
-      <?php get_sidebar(); ?>
-    </div> <!-- /.col -->
+      <div class="col-sm-4">
+        <aside id="secondary" class="widget-area" role="complementary">
+          <?php dynamic_sidebar( 'blog-sidebar' ); ?>
+        </aside> <!-- #secondary -->
+      </div> <!-- /.col -->
 
+    </div> <!-- /.row -->
   </div> <!-- .container -->
 
 <?php

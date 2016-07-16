@@ -15,21 +15,25 @@
 get_header(); ?>
 
   <div class="container">
+    <div class="row">
 
-    <div class="col-sm-8">
-      <main id="main" class="site-main" role="main">
-        <?php
-          while ( have_posts() ) : the_post();
-            get_template_part( 'blocks/content', 'page' );
-          endwhile;
-        ?>
-      </main> <!-- #main -->
-    </div> <!-- /.col -->
+      <div class="col-sm-8">
+        <main id="main" class="site-main" role="main">
+          <?php
+            while ( have_posts() ) : the_post();
+              get_template_part( 'blocks/content', 'page' );
+            endwhile;
+          ?>
+        </main> <!-- #main -->
+      </div> <!-- /.col -->
 
-    <div class="col-sm-4">
-      <?php get_sidebar(); ?>
-    </div> <!-- /.col -->
+      <div class="col-sm-4">
+        <aside id="secondary" class="widget-area" role="complementary">
+          <?php dynamic_sidebar( 'page-sidebar' ); ?>
+        </aside> <!-- #secondary -->
+      </div> <!-- /.col -->
 
+    </div> <!-- /.row -->
   </div> <!-- /.container -->
 
 <?php

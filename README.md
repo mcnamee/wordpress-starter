@@ -25,6 +25,8 @@ Developers who build custom sites.
 | __Performant Wordpress Starter Theme__ | A very vanilla Wordpress theme to start any custom project with. |
 | __Example Wordpress Plugin__ | Coming soon... |
 | __Gulp__ | Gulp is setup and ready to build out your front-end code. |
+| __Sidebars / Widgets__ | Shows how to setup different sidebars - eg. a sidebar for blog and a different sidebar group of widgets for pages. |
+| __Shortcodes__ | Examples for how to create shortcodes in Wordpress - eg. `[button link="http://google.com" title="Go Here"]` |
 
 ### Build Tools - Gulp
 Gulp is configured and ready to go. It'll do a bunch of things for you:
@@ -71,6 +73,20 @@ This project uses [Bower](https://bower.io/) to manage front-end dependencies.
 ### 4.0 Clean Up (Optional)
 - Remove default WP themes - `rm -rf wp-content/themes/twentyfifteen && rm -rf wp-content/themes/twentyfourteen && rm -rf wp-content/themes/twentysixteen`
 - Remove default WP plugins - `rm wp-content/plugins/hello.php`
+
+***
+
+## Recommended Wordpress Plugins
+
+- Advanced Custom Fields - https://wordpress.org/plugins/advanced-custom-fields/
+- ACF Repeater - http://www.advancedcustomfields.com/add-ons/repeater-field/
+- Admin Menu Editor - https://wordpress.org/plugins/admin-menu-editor/
+- Bulk Page Creator - https://wordpress.org/plugins/bulk-page-creator/
+- Contact Form 7 - https://wordpress.org/plugins/contact-form-7/
+- Contact Form DB - https://wordpress.org/plugins/contact-form-7-to-database-extension/
+- Really Simple Captcha - https://wordpress.org/plugins/really-simple-captcha/
+- Wordpress SEO - https://wordpress.org/plugins/wordpress-seo/
+- W3 Total Cache - https://wordpress.org/plugins/w3-total-cache/
 
 ***
 

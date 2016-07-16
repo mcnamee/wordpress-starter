@@ -18,10 +18,10 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <!-- ICONS -->
-<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/dist/img/ms-tile-icon.png" />
+<meta name="msapplication-TileImage" content="<?=theme_assets()?>img/ms-tile-icon.png" />
 <meta name="msapplication-TileColor" content="#8cc641" />
-<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/dist/img/favicon.ico" />
-<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/dist/img/apple-touch-icon.png" />
+<link rel="shortcut icon" href="<?=theme_assets()?>img/favicon.ico" />
+<link rel="apple-touch-icon-precomposed" href="<?=theme_assets()?>img/apple-touch-icon.png" />
 
 <!-- WP_HEAD -->
 <?php wp_head(); ?>

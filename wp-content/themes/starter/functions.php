@@ -41,3 +41,10 @@ require get_template_directory() . '/theme-setup/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/theme-setup/customizer.php';
+
+/**
+ * Make it easier to reference assets
+ */
+  function theme_assets() {
+    echo get_template_directory_uri() . '/dist/';
+  }

@@ -198,7 +198,7 @@ get_header(); ?>
       <div class="page-header">
         <h1>Thumbnails</h1>
       </div>
-      <img src="<?php echo get_template_directory_uri(); ?>/dist/img/example-banner.jpg" class="img-thumbnail" alt="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera">
+      <img src="<?=theme_assets()?>img/example-banner.jpg" class="img-thumbnail" alt="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera">
       <div class="page-header">
         <h1>Labels</h1>
       </div>
