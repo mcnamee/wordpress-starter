@@ -1,0 +1,48 @@
+/**
+ *  Posts Template
+ */
+
+// Header ====================================================================
+
+.entry-header {
+	display: block;
+	float: left;
+	width: 100%;
+	position: relative;
+}
+
+// Content ====================================================================
+
+.entry-content {
+}
+
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 0;
+}
+
+// Footer ====================================================================
+
+.entry-footer {
+}
+
+// Other ====================================================================
+
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+

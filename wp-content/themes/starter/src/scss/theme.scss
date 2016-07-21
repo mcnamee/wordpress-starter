@@ -1,16 +1,19 @@
-// Imports
-// --------------------------------------------------
+// Imports ====================================================================
+// Generic
 @import "plugins";
 @import "variables";
 
-// My partials
+// Templates
+@import "templates/post";
+@import "templates/page";
+@import "templates/page-full-width";
+@import "templates/page-styles";
+
+// Parts
 @import "parts/header";
 @import "parts/footer";
-@import "parts/home-template";
-@import "parts/inner-template";
-@import "parts/posts";
-@import "parts/slider";
 @import "parts/off-canvas-menu";
+@import "parts/visual-composer";
 
 // General Theme Stuff
 // - Try to put as little as possible in here
@@ -19,28 +22,6 @@
 
 $web-font-path: "https://fonts.googleapis.com/css?family=Open+Sans:300,400,800" !default;
 @import url($web-font-path);
-
-// Demo Style Guide Stuff ====================================================================
-
-.grid-demo {
-  .row {
-    margin-bottom: 20px;
-  }
-
-  .row .row {
-    margin-top: 10px;
-    margin-bottom: 0;
-  }
-
-  [class*="col-"] {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    background-color: #eee;
-    background-color: rgba(86,61,124,.15);
-    border: 1px solid #ddd;
-    border: 1px solid rgba(86,61,124,.2);
-  }
-}
 
 // Defaults ====================================================================
 

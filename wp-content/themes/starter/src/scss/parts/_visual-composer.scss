@@ -1,0 +1,46 @@
+/**
+ *  Visual Composer WP Plugin Overrides
+ */
+
+// Centers Row Content when container applied to row ========================================
+
+.vc_row {
+  &.container {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+// Image Carousel / Slider ====================================================================
+
+.vc_images_carousel {
+  max-width: 100% !important; // Don't let things go off the screen!
+
+  // Arrows ------
+
+  .vc_carousel-control {
+    .icon-next, .icon-prev {
+      width: 50px !important;
+      height: 50px !important;
+      font-size: 80px !important;
+      line-height: 50px !important;
+      color: #fff !important;
+    }
+  }
+
+  // Pagination Dots ------
+
+  ol.vc_carousel-indicators {
+    li {
+      border: 1px solid #EEE;
+      background-color: #FFF;
+      box-shadow: 0 0 3px rgba(0,0,0,0.3);
+      transition: linear background-color 0.3s;
+
+      &, &.vc_active {
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+}

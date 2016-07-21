@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Home Page
+ * Template Name: Full Width
  * The template for displaying the page layout.
  *
  *
@@ -15,7 +15,7 @@ get_header(); ?>
     <main id="main" class="site-main" role="main">
       <?php
         while ( have_posts() ) : the_post();
-          get_template_part( 'blocks/banner', 'hero' );
+          get_template_part( 'blocks/content', 'page-no-heading' );
         endwhile;
       ?>
     </main> <!-- #main -->

@@ -1,8 +1,26 @@
-/* 	============================================
-	Colour Box Init
-	============================================ */
-	jQuery(function($){
-		// colorbox
+var $ = jQuery.noConflict();
+
+/*  ============================================
+  Superfish Drop Down Menu Init
+  ============================================ */
+  var mainNav = $('#primary-menu').superfish({
+    popUpSelector: 'ul, .sf-mega',
+    speed: 'normal',
+    speedOut: 'normal',
+    cssArrows: false,
+    animation: {opacity:'show'}
+  });
+
+
+/* ============================================
+  Off-Canvas menu
+  ============================================ */
+  $('#offcanv_menu').offCanvasMenu();
+
+/* ============================================
+  Colour Box Init
+  ============================================ */
+	/*$(function(){
 		$('a.colorbox').colorbox({
 			'maxWidth'    : '98%',
 			'width'       : function() { return ($(window).width() < '767') ? '85%' : false; },
@@ -12,13 +30,13 @@
 			'innerHeight' : function() { return ($(this).hasClass('video')) ? '600px' : false; },
 			'returnFocus' : false // Fixes a conflict with flexslider
 		});
-	});
+	});*/
 
 
-/*  ============================================
-	Smoothly Scroll to a point.
-	============================================ */
-	jQuery(function($) {
+/* ============================================
+  Smoothly Scroll to a point.
+  ============================================ */
+	$(function() {
 		$('.scroll_to').click(function () {
 			$('html,body').animate({scrollTop: $($(this).attr('href')).offset().top}, 1000);
 			return false;
@@ -26,10 +44,10 @@
 	});
 
 
-/* 	============================================
- Qtip
- ============================================ */
-	jQuery(function($){
+/* ============================================
+  Qtip
+  ============================================ */
+	/*$(function(){
 		if($(window).width() > '767') {
 			$('.qtip_tooltip').qtip({ // Grab some elements to apply the tooltip to
 			    content: {
@@ -49,13 +67,13 @@
 	    		},
 			});
 		}
-	});
+	});*/
 
-/* 	============================================
+/* ============================================
 	Banner Init - Slick Slider
 	============================================ */
-	jQuery(window).load(function() {
-		jQuery('[data-slider]').slick({
+	/*$(window).load(function() {
+		$('[data-slider]').slick({
 			infinite: true,
 			dots: true,
 			slidesToShow: 1,
@@ -78,24 +96,7 @@
 				}
 			]
 		});
-	});
-
-/* 	============================================
-	Superfish Drop Down Menu Init
-	============================================ */
-  var mainNav = jQuery('#primary-menu').superfish({
-    popUpSelector: 'ul, .sf-mega',
-    speed: 'normal',
-    speedOut: 'normal',
-    cssArrows: false,
-    animation: {opacity:'show'}
-  });
-
-
-/* 	============================================
-	Off-Canvas menu
-	============================================ */
-  jQuery('#offcanv_menu').offCanvasMenu();
+	});*/
 
 
 /* 	============================================
@@ -103,7 +104,7 @@
 	============================================ */
 
 	/*
-	jQuery(function($) {
+	$(function() {
 		var input_selector = '.form_input_wrap.fancy input[type=text], .form_input_wrap.fancy input[type=email], .form_input_wrap.fancy input[type=password], .form_input_wrap.fancy textarea';
 		var textarea_height = '100px';
 		var textarea_original = '50px';

@@ -69,7 +69,7 @@ var themeDir = 'wp-content/themes/starter/';
     gulp.task('js', function() {
       // Add/Remove any files you'd like to minify/concatinate to this array
       var files = [
-        'bower_components/jquery/dist/jquery.min.js',
+        // 'bower_components/jquery/dist/jquery.min.js',
         'bower_components/bootstrap-sass/assets/javascripts/affix.js',
         'bower_components/bootstrap-sass/assets/javascripts/alert.js',
         'bower_components/bootstrap-sass/assets/javascripts/button.js',
@@ -81,8 +81,8 @@ var themeDir = 'wp-content/themes/starter/';
         'bower_components/jquery-colorbox/jquery.colorbox-min.js',
         'bower_components/superfish/dist/js/superfish.min.js',
         'bower_components/jquery-hoverintent/jquery.hoverintent.js',
-        'bower_components/qtip2/jquery.qtip.min.js',
-        'bower_components/slick-carousel/slick/slick.min.js',
+        // 'bower_components/qtip2/jquery.qtip.min.js',
+        // 'bower_components/slick-carousel/slick/slick.min.js',
       ];
 
       // All src/assets/js files
