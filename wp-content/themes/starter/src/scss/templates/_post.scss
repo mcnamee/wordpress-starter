@@ -1,14 +1,12 @@
-/**
- *  Posts Template
- */
+// Posts Template
 
 // Header ====================================================================
 
 .entry-header {
-	display: block;
-	float: left;
-	width: 100%;
-	position: relative;
+  display: block;
+  float: left;
+  position: relative;
+  width: 100%;
 }
 
 // Content ====================================================================
@@ -29,20 +27,20 @@
 // Other ====================================================================
 
 .sticky {
-	display: block;
+  display: block;
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+  margin: 0 0 1.5em;
 }
 
 .byline,
 .updated:not(.published) {
-	display: none;
+  display: none;
 }
 
 .single .byline,
 .group-blog .byline {
-	display: inline;
+  display: inline;
 }
 

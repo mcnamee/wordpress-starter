@@ -1,6 +1,4 @@
-/**
- *  Site Header
- */
+//  Site Header
 
 // Site Header ====================================================================
 
@@ -16,16 +14,15 @@
 
 // Drop Down Nav ====================================================================
 
-ul#primary-menu, ul#primary-menu * {
-	margin:     0;
-	padding:    0;
-	list-style: none;
-	position:   relative;
+ul#primary-menu,
+ul#primary-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
 }
 
 ul#primary-menu {
-	-ms-flex-pack: justify;
-  -webkit-flex-wrap: nowrap;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -35,38 +32,36 @@ ul#primary-menu {
 }
 
 ul#primary-menu li {
-	max-width: none;
+  max-width: none;
   float: none;
   display: flex;
   justify-content: center;
-  width: -ms-flex(1);
-  -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
 ul#primary-menu > li {
-	vertical-align: middle;
+  vertical-align: middle;
   text-align: center;
 }
 
 ul#primary-menu a,
 ul#primary-menu a:visited {
-	color:              $brand-primary;
-	padding:            14px 15px;
-	text-decoration:    none;
-	zoom:               1;
-	display:            block;
-	width:              100%;
+  color: $brand-primary;
+  padding: 14px 15px;
+  text-decoration: none;
+  zoom: 1;
+  display: block;
+  width: 100%;
   font-size: 16px;
   line-height: 18px;
   font-weight: 500;
-	box-sizing:         border-box;
+  box-sizing: border-box;
 }
 
 ul#primary-menu a:hover,
 ul#primary-menu li.current > a {
   // background: lighten($brand-primary, 8%);
-	color: lighten($brand-primary, 20%);
+  color: lighten($brand-primary, 20%);
 }
 
 /* Drop downs */
@@ -107,14 +102,14 @@ ul#primary-menu > li > ul {
 
 ul#primary-menu ul a,
 ul#primary-menu ul a:visited {
-	border:     0;
-	padding:    8px 15px;
-	background: #FAFAFA;
-	color:      #777777;
-	font-size:  13px;
+  border:     0;
+  padding:    8px 15px;
+  background: #FAFAFA;
+  color:      #777777;
+  font-size:  13px;
 }
 
 ul#primary-menu ul a:hover {
-	background: #FAFAFA;
-	color:      #000000;
+  background: #FAFAFA;
+  color:      #000000;
 }

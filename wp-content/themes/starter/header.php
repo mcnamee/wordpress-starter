@@ -25,6 +25,7 @@
 
 <!-- WP_HEAD -->
 <?php wp_head(); ?>
+<!-- /WP_HEAD -->
 </head>
 
 <body <?php body_class(); ?> role="document">

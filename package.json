@@ -17,7 +17,6 @@
   "author": "Matt Mcnamee",
   "license": "ISC",
   "devDependencies": {
-    "bower-files": "^3.13.x",
     "browser-sync": "^2.13.x",
     "del": "^2.2.x",
     "gulp": "^3.9.x",
@@ -29,5 +28,13 @@
     "gulp-sourcemaps": "^1.6.x",
     "gulp-uglify": "^1.5.x",
     "run-sequence": "^1.2.x"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "^3.1.1",
+    "jquery-colorbox": "^1.6.4",
+    "jquery-hoverintent": "^1.8.2",
+    "slick-carousel": "^1.6.0",
+    "superfish": "^1.7.9"
   }
 }

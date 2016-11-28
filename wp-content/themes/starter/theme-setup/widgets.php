@@ -11,9 +11,9 @@ function wpstarter_widgets_init() {
     'id'            => 'blog-sidebar',
     'description'   => esc_html__( 'Add widgets here.', 'wpstarter' ),
     'before_widget' => '<section id="%1$s" class="widget panel panel-primary %2$s">',
-    'after_widget'  => '</div></section>',
     'before_title'  => '<div class="panel-heading"><h3 class="widget-title panel-title">',
     'after_title'   => '</h3></div><div class="panel-body">',
+    'after_widget'  => '</div></section>',
   ) );
 
   register_sidebar( array(
@@ -21,9 +21,9 @@ function wpstarter_widgets_init() {
     'id'            => 'page-sidebar',
     'description'   => esc_html__( 'Add widgets here.', 'wpstarter' ),
     'before_widget' => '<section id="%1$s" class="widget panel panel-primary %2$s">',
-    'after_widget'  => '</div></section>',
     'before_title'  => '<div class="panel-heading"><h3 class="widget-title panel-title">',
     'after_title'   => '</h3></div><div class="panel-body">',
+    'after_widget'  => '</div></section>',
   ) );
 }
 add_action( 'widgets_init', 'wpstarter_widgets_init' );

@@ -1,6 +1,6 @@
 /*!
  * gulp
- * $ sudo npm install del gulp bower-files gulp-concat gulp-sourcemaps gulp-sass gulp-minify-css gulp-autoprefixer browser-sync gulp-uglify gulp-imagemin run-sequence --save
+ * $ sudo npm install del gulp gulp-concat gulp-sourcemaps gulp-sass gulp-minify-css gulp-autoprefixer browser-sync gulp-uglify gulp-imagemin run-sequence --save
  */
 
 var themeDir = 'wp-content/themes/starter/';
@@ -15,7 +15,6 @@ var themeDir = 'wp-content/themes/starter/';
         autoprefixer = require('gulp-autoprefixer'),
         concat = require('gulp-concat'),
         uglify = require('gulp-uglify'),
-        bowerLib = require('bower-files')(),
         imagemin = require('gulp-imagemin'),
         runSequence = require('run-sequence'),
         browserSync = require('browser-sync'),
@@ -28,12 +27,12 @@ var themeDir = 'wp-content/themes/starter/';
     });
 
 /*  Copy specific files to dist (gulp copy)
-    - eg. fonts, bower comps etc
+    - eg. fonts, npm componentss etc
     ************************* */
     gulp.task('copy', function() {
       // Fonts
       gulp.src([
-          'bower_components/bootstrap-sass/assets/fonts/bootstrap/*'
+          'node_modules/bootstrap-sass/assets/fonts/bootstrap/*'
         ]).pipe(gulp.dest(themeDir + 'dist/fonts'));
     });
 
@@ -43,7 +42,7 @@ var themeDir = 'wp-content/themes/starter/';
     gulp.task('images', function() {
       return gulp.src(themeDir + 'src/img/**/*')
         .pipe(imagemin())
-        .pipe(gulp.dest(themeDir + 'dist/img'))
+        .pipe(gulp.dest(themeDir + 'dist/img'));
     });
 
 /*  Styles (gulp styles)
@@ -64,25 +63,24 @@ var themeDir = 'wp-content/themes/starter/';
     });
 
 /*  Concat and Minify JS (gulp js)
-    - Looks for all bower components + src/assets/js files
+    - Looks for all npm components + src/assets/js files
     ************************* */
     gulp.task('js', function() {
       // Add/Remove any files you'd like to minify/concatinate to this array
       var files = [
-        // 'bower_components/jquery/dist/jquery.min.js',
-        'bower_components/bootstrap-sass/assets/javascripts/affix.js',
-        'bower_components/bootstrap-sass/assets/javascripts/alert.js',
-        'bower_components/bootstrap-sass/assets/javascripts/button.js',
-        'bower_components/bootstrap-sass/assets/javascripts/dropdown.js',
-        'bower_components/bootstrap-sass/assets/javascripts/collapse.js',
-        'bower_components/bootstrap-sass/assets/javascripts/popover.js',
-        'bower_components/bootstrap-sass/assets/javascripts/tab.js',
-        'bower_components/bootstrap-sass/assets/javascripts/transition.js',
-        'bower_components/jquery-colorbox/jquery.colorbox-min.js',
-        'bower_components/superfish/dist/js/superfish.min.js',
-        'bower_components/jquery-hoverintent/jquery.hoverintent.js',
-        // 'bower_components/qtip2/jquery.qtip.min.js',
-        // 'bower_components/slick-carousel/slick/slick.min.js',
+        // 'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/bootstrap-sass/assets/javascripts/affix.js',
+        'node_modules/bootstrap-sass/assets/javascripts/alert.js',
+        'node_modules/bootstrap-sass/assets/javascripts/button.js',
+        'node_modules/bootstrap-sass/assets/javascripts/dropdown.js',
+        'node_modules/bootstrap-sass/assets/javascripts/collapse.js',
+        'node_modules/bootstrap-sass/assets/javascripts/popover.js',
+        'node_modules/bootstrap-sass/assets/javascripts/tab.js',
+        'node_modules/bootstrap-sass/assets/javascripts/transition.js',
+        'node_modules/jquery-colorbox/jquery.colorbox-min.js',
+        'node_modules/superfish/dist/js/superfish.min.js',
+        'node_modules/jquery-hoverintent/jquery.hoverintent.js',
+        'node_modules/slick-carousel/slick/slick.min.js',
       ];
 
       // All src/assets/js files

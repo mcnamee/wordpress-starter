@@ -37,11 +37,10 @@ Gulp is configured and ready to go. It'll do a bunch of things for you:
 - Runs [BrowserSync](http://browsersync.io) - auto-reloads the browser, allows you to preview the site on multiple devices
 
 ### Theme Front-End Libraries
-This project uses [Bower](https://bower.io/) to manage front-end dependencies.
+This project uses [NPM](https://www.npmjs.com/) to manage front-end dependencies.
 
 - [Bootstrap](http://getbootstrap.com/)
 - [jQuery](https://jquery.com/)
-- [qTip2](http://qtip2.com/) for Tooltips
 - [Slick Carousel](http://kenwheeler.github.io/slick/) for Carousels/Sliders
 - [SuperFish](http://users.tpg.com.au/j_birch/plugins/superfish/) for Drop-Down Menus
 - [Colorbox](http://www.jacklmoore.com/colorbox/) for Lightboxes
@@ -61,9 +60,8 @@ This project uses [Bower](https://bower.io/) to manage front-end dependencies.
 
 ### 2.0 Package Dependencies
 1. Install dependencies - `npm install`
-2. Install front-end dependencies - `bower install`
-3. Edit /gulpfile.js - within the BrowserSync task, change `proxy: 'localhost',` to the URL of the this project.
-4. Run the initial build - `gulp initialBuild`
+2. Edit /gulpfile.js - within the BrowserSync task, change `proxy: 'localhost',` to the URL of the this project.
+3. Run the initial build - `gulp initialBuild`
 
 ### 3.0 Change the Name of the Theme
 1. Rename the theme name - `mv wp-content/themes/starter wp-content/themes/new-name` (where new-name is the directory name)
@@ -71,7 +69,7 @@ This project uses [Bower](https://bower.io/) to manage front-end dependencies.
 3. Update Gulp to build from the right directory - update the themeDir variable in `/gulpfile.js` to point to the right place
 
 ### 4.0 Clean Up (Optional)
-- Remove default WP themes - `rm -rf wp-content/themes/twentyfifteen && rm -rf wp-content/themes/twentyfourteen && rm -rf wp-content/themes/twentysixteen`
+- Remove default WP themes - `rm -rf wp-content/themes/twentyten && rm -rf wp-content/themes/twentyeleven && rm -rf wp-content/themes/twentytwelve && rm -rf wp-content/themes/twentythirteen && rm -rf wp-content/themes/twentyfourteen  && rm -rf wp-content/themes/twentyfifteen  && rm -rf wp-content/themes/twentysixteen  && rm -rf wp-content/themes/twentyseventeen`
 - Remove default WP plugins - `rm wp-content/plugins/hello.php`
 
 ***

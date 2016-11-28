@@ -1,31 +1,32 @@
 // Imports ====================================================================
 // Generic
-@import "plugins";
-@import "variables";
+@import 'plugins';
+@import 'variables';
 
 // Templates
-@import "templates/post";
-@import "templates/page";
-@import "templates/page-full-width";
-@import "templates/page-styles";
+@import 'templates/post';
+@import 'templates/page';
+@import 'templates/page-full-width';
+@import 'templates/page-styles';
 
 // Parts
-@import "parts/header";
-@import "parts/footer";
-@import "parts/off-canvas-menu";
-@import "parts/visual-composer";
+@import 'parts/header';
+@import 'parts/footer';
+@import 'parts/off-canvas-menu';
+@import 'parts/visual-composer';
 
 // General Theme Stuff
 // - Try to put as little as possible in here
 // -- Instead create partials
 // --------------------------------------------------
 
-$web-font-path: "https://fonts.googleapis.com/css?family=Open+Sans:300,400,800" !default;
+$web-font-path: 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,800' !default;
 @import url($web-font-path);
 
 // Defaults ====================================================================
 
-html, body {
+html,
+body {
   background-color: $gray-lighter;
 }
 
@@ -39,7 +40,7 @@ html, body {
 
 .btn {
   border-width: 2px;
-  outline: none !important;
+  outline: none;
 }
 
 .btn:active {
@@ -50,7 +51,8 @@ html, body {
   @include box-shadow(none);
 }
 
-button, input[type="submit"] {
+button,
+input[type="submit"] {
   @extend .btn;
 }
 

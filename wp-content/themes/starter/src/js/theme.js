@@ -45,34 +45,9 @@ var $ = jQuery.noConflict();
 
 
 /* ============================================
-  Qtip
-  ============================================ */
-	/*$(function(){
-		if($(window).width() > '767') {
-			$('.qtip_tooltip').qtip({ // Grab some elements to apply the tooltip to
-			    content: {
-			        attr: 'data-tooltip'
-			    },
-		      	style: {
-	        		classes: 'default_qtip qtip-shadow',
-	        		tip: {
-	        			width: 11,
-			            height: 7,
-			            offset: 1
-	        		},
-	        	},
-	        	 position: {
-	        		my: 'left center',
-	        		at: 'right center'
-	    		},
-			});
-		}
-	});*/
-
-/* ============================================
 	Banner Init - Slick Slider
 	============================================ */
-	/*$(window).load(function() {
+	$(window).load(function() {
 		$('[data-slider]').slick({
 			infinite: true,
 			dots: true,
@@ -96,7 +71,7 @@ var $ = jQuery.noConflict();
 				}
 			]
 		});
-	});*/
+	});
 
 
 /* 	============================================
@@ -161,8 +136,8 @@ var $ = jQuery.noConflict();
 
 
 /*  ============================================
-	Custom Select boxes
-	============================================ */
+  	Custom Select boxes
+  	============================================ */
 
 	/*
 	$(document).ready(function () {
