@@ -23,13 +23,17 @@ Thumbs.db
 !.gitignore
 !.gitkeep
 !/README.md
+!/readme.md
 
 # Track the following files
 !/.editorconfig
+!/bitbucket-pipelines.yml
 !/bower.json
 !/LICENCE
 !/gulpfile.js
 !/package.json
+!/.htaccess-additions
+!/.wp-config-additions.php
 
 # Setup to track individual folders below
 !/wp-content
