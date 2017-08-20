@@ -20,6 +20,7 @@ wp-config.php
 # Ignore user-generated content
 wp-content/uploads/
 uploads/*
+!uploads/.gitkeep
 
 # Ignore WP generated content
 wp-content/blogs.dir/
