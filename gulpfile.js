@@ -40,7 +40,7 @@ var themeDir = 'wp-content/themes/starter/';
     - Optimizes images and outputs to dist directory
     ************************* */
     gulp.task('images', function() {
-      return gulp.src(themeDir + 'src/img/**/*')
+      return gulp.src(themeDir + 'assets/img/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest(themeDir + 'dist/img'));
     });
@@ -52,7 +52,7 @@ var themeDir = 'wp-content/themes/starter/';
     - Generates source maps too
     ************************* */
     gulp.task('styles', function() {
-      return gulp.src([themeDir + 'src/scss/theme.scss'])
+      return gulp.src([themeDir + 'assets/scss/theme.scss'])
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(autoprefixer({ browsers: ['last 5 versions'] }))
@@ -63,7 +63,7 @@ var themeDir = 'wp-content/themes/starter/';
     });
 
 /*  Concat and Minify JS (gulp js)
-    - Looks for all npm components + src/assets/js files
+    - Looks for all npm components + assets/assets/js files
     ************************* */
     gulp.task('js', function() {
       // Add/Remove any files you'd like to minify/concatinate to this array
@@ -83,8 +83,8 @@ var themeDir = 'wp-content/themes/starter/';
         'node_modules/slick-carousel/slick/slick.min.js',
       ];
 
-      // All src/assets/js files
-      files.push(themeDir + 'src/js/**/*.js');
+      // All assets/assets/js files
+      files.push(themeDir + 'assets/js/**/*.js');
 
       return gulp.src(files)
         .pipe(concat('theme.js'))
@@ -120,7 +120,7 @@ var themeDir = 'wp-content/themes/starter/';
       });
 
       /* Run task on updates */
-      gulp.watch(themeDir + 'src/scss/**/*.scss', ['styles']);
-      gulp.watch(themeDir + 'src/js/**/*.js', ['js']);
-      gulp.watch(themeDir + 'src/img/**/*', ['images']);
+      gulp.watch(themeDir + 'assets/scss/**/*.scss', ['styles']);
+      gulp.watch(themeDir + 'assets/js/**/*.js', ['js']);
+      gulp.watch(themeDir + 'assets/img/**/*', ['images']);
     });

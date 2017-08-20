@@ -1,11 +1,4 @@
-# Blacklist (ignore)
-# ------------------------------------------------------------
-# Ignore everything - we'll manually add what we need at the bottom
-/*
-/*/
-
-# Plus all of the following files
-.*
+# Ignore OS and Log files
 error_log_local
 error_log_dev
 error_log
@@ -15,39 +8,28 @@ ehthumbs.db
 Thumbs.db
 *.sql
 *.sqlite
+.DS_Store
 
+# Ignore dependencies
+node_modules
+vendor
 
-# Whitelist (include)
-# ------------------------------------------------------------
-# Track Git stuff
-!.gitignore
-!.gitkeep
-!/README.md
-!/readme.md
+# Ignore files with sensitive data
+wp-config.php
 
-# Track the following files
-!/.editorconfig
-!/bitbucket-pipelines.yml
-!/bower.json
-!/LICENCE
-!/gulpfile.js
-!/package.json
-!/.htaccess-additions
-!/.wp-config-additions.php
+# Ignore user-generated content
+wp-content/uploads/
+uploads/*
 
-# Setup to track individual folders below
-!/wp-content
-/wp-content/*
-!/wp-content/themes
-/wp-content/themes/*
-!/wp-content/plugins
-/wp-content/plugins/*
-
-# Track these THEMES/s ---------
-!/wp-content/themes/starter
-
-# But not the theme dist folder
-/wp-content/themes/starter/dist
-
-# Track these PLUGINS/s ---------
-# !wp-content/plugins/starter
+# Ignore WP generated content
+/wordpress
+wp-content/blogs.dir/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+sitemap.xml
+wp-content/cache/
+wp-content/backups/
+sitemap.xml
+sitemap.xml.gz
