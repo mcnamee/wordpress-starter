@@ -22,7 +22,6 @@ wp-content/uploads/
 uploads/*
 
 # Ignore WP generated content
-/wordpress
 wp-content/blogs.dir/
 wp-content/upgrade/
 wp-content/backup-db/
