@@ -21,6 +21,7 @@ The complexity is that Wordpress and a bunch of plugins I use have their own aut
 
 1. Clone the Repo & Install Wordpress - `git clone --recursive git@github.com:mcnamee/wordpress-starter.git`
 1. Remove Git, so that you can start/add your own project repo - `rm -rf .git`
+1. Copy and Update your Database details in wp-config.php - `cp wp-config.sample.php wp-config.php`
 1. Visit the Wordpress URL and run the normal Wordpress Setup
 
 [Learn more about the theme](#The-Theme) or simply remove it:
